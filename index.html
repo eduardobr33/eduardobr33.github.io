@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang ="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Eduardo Bergillos Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <!-- NAV -->
+    <header>
+        <h1>Eduardo Bergillos</h1>
+        <nav>
+            <ul>
+                <li><a href="#start">Start</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- START -->
+    <section id="start" class="section">
+        <h2>Bienvenido a mi Portfolio</h2>
+        <p>Soy desarrollador de videojuegos. Aqui estan mis proyectos.</p>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-grid">
+            <div class="project">
+                <h3>Ultrakill Fighting</h3>
+                <img 
+                    src="img/ultrakill.jpg" 
+                    alt="Ultrakill Fighting image"
+                />
+                <p>Made in Unity with C#.</p>
+                <a href="https://github.com/eduardobr33/Ultrakill-Fighting" target="_blank">Github link</a>
+            </div>
+            <div 
+                class="project"
+                onmouseover="startSlider('slider-süregs-mask', true)" 
+                onmouseout="stopSlider('slider-süregs-mask', 'img/süregs-mask-img-0.jpg')"
+            >
+                <h3>Süreg's Mask</h3>
+                <img 
+                    id="slider-süregs-mask"
+                    src="img/süregs-mask-img-0.jpg" 
+                    alt="Süreg's Mask image" 
+                />
+                <p>Made in Unity.</p>
+                <a href="https://github.com/SouthWest-Studios/Suregs-Mask" target="_blank">Github link</a>
+            </div>
+            <div class="project">
+                <h3>Movil Game</h3>
+                <p>Made in Unity.</p>
+            </div>
+            <div class="project">
+                <h3>Movil Game</h3>
+                <p>Made in Unity.</p>
+            </div>
+            <div class="project">
+                <h3>Movil Game</h3>
+                <p>Made in Unity.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <h2>About</h2>
+        <p>My name is Eduardo Bergillos, i'm a game developer who loves reading books.</p>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Eduardo Bergillos</p>
+    </footer>
+
+    <!-- SCRIPT -->
+    <script>
+        const sliders = {
+            "slider-süregs-mask": {
+                images: ["img/süregs-mask-img-1.png", "img/süregs-mask-img-2.png", "img/süregs-mask-img-3.png", "img/süregs-mask-img-4.png"],
+                index: 0,
+                interval: null
+            }
+        };
+
+        function startSlider(id, isFirstImage) {
+            const slider = sliders[id];
+            if (!slider) return;
+
+            slider.interval = setInterval(() => {
+                slider.index = (slider.index + 1) % slider.images.length;
+                document.getElementById(id).src = slider.images[slider.index];
+            }, 2000);
+        }
+
+        function stopSlider(id, originalSrc) {
+            const slider = sliders[id];
+            if (!slider) return;
+
+            clearInterval(slider.interval);
+            slider.index = 0;
+            document.getElementById(id).src = originalSrc;
+        }
+    </script>
+</body>
+</html>
