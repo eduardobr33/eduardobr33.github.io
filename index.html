@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Eduardo Bergillos Portfolio</title>
+    <title>Eduardo Bergillos</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -15,14 +15,18 @@
                 <li><a href="#start">Start</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- START -->
     <section id="start" class="section">
-        <h2>Bienvenido a mi Portfolio</h2>
-        <p>Soy desarrollador de videojuegos. Aqui estan mis proyectos.</p>
+        <h2>Hello! I'm Eduardo</h2>
+        <p>
+            I'm a 21-year-old student in the third year of Video Game Design and Development in CITM. 
+            My main interest in the videogame industry is the development of AI for enemies.
+        </p>
     </section>
 
     <!-- PROJECTS -->
@@ -30,47 +34,109 @@
         <h2>Projects</h2>
         <div class="projects-grid">
             <div class="project">
-                <h3>Ultrakill Fighting</h3>
-                <img 
-                    src="img/ultrakill.jpg" 
-                    alt="Ultrakill Fighting image"
-                />
-                <p>Made in Unity with C#.</p>
-                <a href="https://github.com/eduardobr33/Ultrakill-Fighting" target="_blank">Github link</a>
+                <img src="img/w40k-the-last-marine-img-0.png" alt="Warhammer 40k: The Last Marine image" />
+                <div class="project-content">
+                    <h3>Warhammer 40k: The Last Marine</h3>
+                    <p class="project-date">March / 4 / 2025</p>
+                    <div class="project-tags">
+                        <span>Coffee Engine</span>
+                        <span>Lua</span>
+                    </div>
+                    <p>
+                        This project its beeing developed by the whole class of university students in CITM. 
+                        This project its beeing built using the custom game engine we developed in the previous semester: Coffee Engine.
+                    </p>
+                    <div class="project-links">
+                        <a href="https://github.com/Burned-Games/Coffee-Engine" target="_blank">
+                            <img src="img/coffee-engine.png" alt="GitHub Coffee Engine" />
+                        </a>
+                        <a href="https://github.com/Burned-Games/W40K-TLM" target="_blank">
+                            <img src="img/github.png" alt="GitHub Warhammer 40k: The Last Marine" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="project">
+                <img src="img/ultrakill-img-0.png" alt="Ultrakill Fighting image" />
+                <div class="project-content">
+                    <h3>Ultrakill Fighting</h3>
+                    <p class="project-date">November / 30 / 2024</p>
+                    <div class="project-tags">
+                        <span>Unity</span>
+                        <span>C#</span>
+                    </div>
+                    <p>A 2D fighting game inspired by classics like Street Fighter and Mortal Kombat, set in the fast-paced world of Ultrakill.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/eduardobr33/Ultrakill-Fighting" target="_blank">
+                            <img src="img/github.png" alt="GitHub Ultrakill Fighting" />
+                        </a>
+                    </div>
+                </div>
             </div>
             <div 
                 class="project"
                 onmouseover="startSlider('slider-süregs-mask', true)" 
                 onmouseout="stopSlider('slider-süregs-mask', 'img/süregs-mask-img-0.jpg')"
             >
-                <h3>Süreg's Mask</h3>
                 <img 
                     id="slider-süregs-mask"
                     src="img/süregs-mask-img-0.jpg" 
                     alt="Süreg's Mask image" 
                 />
-                <p>Made in Unity.</p>
-                <a href="https://github.com/SouthWest-Studios/Suregs-Mask" target="_blank">Github link</a>
+                <div class="project-content">
+                    <h3>Süreg's Mask</h3>
+                    <p class="project-date">March / 6 / 2024</p>
+                    <div class="project-tags">
+                        <span>OpenGL</span>
+                        <span>C++</span>
+                    </div>
+                    <p>Süreg's Mask is a project team of the subject “Project II” in CITM University: Videogames Design & Developments degree and Design, Animation and Digital Art degree.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/SouthWest-Studios/Suregs-Mask" target="_blank">
+                            <img src="img/github.png" alt="GitHub Süreg's Mask" />
+                        </a>
+                    </div>
+                </div>
             </div>
             <div class="project">
-                <h3>Movil Game</h3>
-                <p>Made in Unity.</p>
+                <h3>Coming Soon...</h3>
             </div>
             <div class="project">
-                <h3>Movil Game</h3>
-                <p>Made in Unity.</p>
+                <h3>Coming Soon...</h3>
             </div>
             <div class="project">
-                <h3>Movil Game</h3>
-                <p>Made in Unity.</p>
+                <h3>Coming Soon...</h3>
             </div>
         </div>
     </section>
 
     <!-- ABOUT -->
     <section id="about" class="section">
-        <h2>About</h2>
-        <p>My name is Eduardo Bergillos, i'm a game developer who loves reading books.</p>
+        <h2>About Me</h2>
+        <p>
+            My name is <b>Eduardo Bergillos Rivas</b>, I'm a <b>21-year-old</b> video game developer, I was born in <b>Barcelona in 2003</b>.<br>
+            Currentlly, I'm stugying a degree in <b>Video Game Design and Development</b> at CITM (UPC).<br>
+            My main interest in the industry is enemy AI development, beeing so, I'm currentlly doing my <b>Final Degree Project</b> about <b>Immersive AI's using GOAP</b> (Goal Oriented Action Planning).<br>
+            Additionally, I love reading manga, ci-fi and fantasy books. The best I have read so far are: Berserk, The Stormlight Archive and Foundation. I'm currentlly reading The Wheel of Time.
+        </p>
+        <h2>Education</h2>
+        <h2>Skills</h2>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/eduardo-bergillos-rivas-57a324222" target="_blank">
+                <img src="img/linkedin.png" alt="LinkedIn" />
+            </a>
+            <a href="https://github.com/eduardobr33" target="_blank">
+                <img src="img/github.png" alt="GitHub" />
+            </a>
+            <a href="https://x.com/World33War" target="_blank">
+                <img src="img/twitter.png" alt="Twitter" />
+            </a>
+        </div>
     </section>
 
     <!-- FOOTER -->
