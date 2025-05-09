@@ -25,7 +25,25 @@ header {
 h2 {
     margin-top: 40px;
     margin-bottom: 20px;
-    font-size: 36px;
+    font-size: 48px;
+    text-align: center;
+    color: #333;
+}
+
+h2::after{
+    content: "";
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #333;
+    margin: 10px auto 20px;
+    border-radius: 8px;
+}
+
+h3 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-size: 32px;
     text-align: center;
     color: #333;
 }
@@ -49,6 +67,16 @@ nav ul li a {
     font-size: 64px;
 }
 
+#start h2::after{
+    content: "";
+    display: block;
+    width: 250px;
+    height: 8px;
+    background-color: #333;
+    margin: 10px auto 20px;
+    border-radius: 8px;
+}
+
 #start p {
     max-width: 1000px;
     margin: 0 auto;
@@ -60,7 +88,7 @@ nav ul li a {
 #about p {
     max-width: 600px;
     margin: 0 auto;
-    text-align: left;
+    text-align: justify;
     white-space: normal;
 }
 
@@ -95,10 +123,54 @@ nav ul li a {
     box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1000px;
+    margin: 40px auto;
+    justify-items: center;
+}
+
+.education-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.education-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.education-card img {
+    max-width: 100%;
+    max-height: 180px;
+    margin-bottom: 15px;
+    object-fit: contain;
+}
+
+.education-text h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.education-text p {
+    font-size: 0.95rem;
+    color: #555;
+}
+
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
+    gap: 30px;
     max-width: 1000px;
     margin: 40px auto 0;
     justify-items: center;
@@ -157,6 +229,10 @@ nav ul li a {
 
 .project-content {
     padding: 15px;
+}
+
+.project-content h3 {
+    font-size: 28px;
 }
 
 .project-date {
