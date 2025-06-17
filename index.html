@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang ="es">
+<html lang ="en">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -35,7 +35,7 @@
         <div class="projects-grid">
 
             <!-- W40K-TLM -->
-            <div class="project">
+            <div class="project" onclick="location.href='w40k-tlm.html'">
                 <img src="img/w40k-the-last-marine-img-0.png" alt="Warhammer 40k: The Last Marine image" />
                 <div class="project-content">
                     <h3>Warhammer 40k: The Last Marine</h3>
@@ -44,10 +44,6 @@
                         <span>Coffee Engine</span>
                         <span>Lua</span>
                     </div>
-                    <p>
-                        This project its beeing developed by the whole class of university students in CITM. 
-                        This project its beeing built using the custom game engine we developed in the previous semester: Coffee Engine.
-                    </p>
                     <div class="project-links">
                         <a href="https://github.com/Burned-Games/Coffee-Engine" target="_blank">
                             <img src="img/coffee-engine.png" alt="GitHub Coffee Engine" />
@@ -79,8 +75,8 @@
             </div>
 
             <!-- SÜREG'S MASK -->
-            <div class="project" onmouseover="startSlider('slider-süregs-mask', true)" onmouseout="stopSlider('slider-süregs-mask', 'img/süregs-mask-img-0.jpg')">
-                <img id="slider-süregs-mask" src="img/süregs-mask-img-0.jpg" alt="Süreg's Mask image" />
+            <div class="project" onmouseover="startSlider('slider-suregs-mask', true)" onmouseout="stopSlider('slider-suregs-mask', 'img/suregs-mask-img-0.jpg')">
+                <img id="slider-suregs-mask" src="img/suregs-mask-img-0.jpg" alt="Süreg's Mask image" />
                 <div class="project-content">
                     <h3>Süreg's Mask</h3>
                     <p class="project-date">March / 6 / 2024</p>
@@ -100,25 +96,8 @@
                 </div>
             </div>
 
-            <!-- RACING GAME -->
             <div class="project">
-                <img src="img/racing-game-img-0.png" alt="Racing Game image" />
-                <div class="project-content">
-                    <h3>Racing Game</h3>
-                    <p class="project-date">January / 12 / 2024</p>
-                    <div class="project-tags">
-                        <span>OpenGL</span>
-                        <span>Bullet 3D</span>
-                        <span>SDL2</span>
-                        <span>C++</span>
-                    </div>
-                    <p>The objective of this project was create a track and a car with Bullet 3D for our Physics II Final Project.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Duding-Games/Project-Race-Fisica-II" target="_blank">
-                            <img src="img/github.png" alt="Racing Game Mask" />
-                        </a>
-                    </div>
-                </div>
+                <h3>Coming Soon...</h3>
             </div>
 
             <div class="project">
@@ -214,8 +193,8 @@
     <!-- SCRIPT -->
     <script>
         const sliders = {
-            "slider-süregs-mask": {
-                images: ["img/süregs-mask-img-1.png", "img/süregs-mask-img-2.png", "img/süregs-mask-img-3.png", "img/süregs-mask-img-4.png"],
+            "slider-suregs-mask": {
+                images: ["img/suregs-mask-img-1.png", "img/suregs-mask-img-2.png", "img/suregs-mask-img-3.png", "img/suregs-mask-img-4.png"],
                 index: 0,
                 interval: null
             }
@@ -239,6 +218,12 @@
             slider.index = 0;
             document.getElementById(id).src = originalSrc;
         }
+
+        document.querySelectorAll('.project a').forEach(link => {
+            link.addEventListener('click', function(event) {
+                event.stopPropagation();
+            });
+        });
     </script>
 </body>
 </html>
