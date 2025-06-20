@@ -214,12 +214,12 @@ nav ul li a {
 
 .project {
     background: white;
-    border-radius: 20px; /* o mantén 125px si lo prefieres visualmente */
+    border-radius: 20px;
     box-shadow: 0 5px 12px rgba(0,0,0,0.1);
     overflow: hidden;
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.3s ease;
-    display: block; /* ya no necesitas flex si solo hay una imagen */
+    display: block;
     cursor: pointer;
     padding: 0;
     margin: 0;
@@ -232,33 +232,32 @@ nav ul li a {
 
 .project img {
     width: 100%;
-    height: 500px; /* o el tamaño que prefieras */
+    height: 500px;
     object-fit: cover;
     display: block;
     margin: 0;
-    border-radius: 20px; /* opcional */
+    border-radius: 20px;
 }
 
 .project-page {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 60px 20px;
-    text-align: center;
 }
 
-.project-main-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+.project-title {
+    font-size: 1.8rem;
+    color: #181818;
     margin-bottom: 30px;
+    text-align: center;
+    line-height: 1.6;
 }
 
 .project-description {
     font-size: 1.2rem;
     color: #444;
     margin-bottom: 30px;
-    text-align: center;
+    text-align: left;
     line-height: 1.6;
 }
 
@@ -272,7 +271,7 @@ nav ul li a {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 30px;
 }
 
@@ -287,7 +286,7 @@ nav ul li a {
 
 .project-links {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     gap: 30px;
     margin-top: 20px;
 }
@@ -300,6 +299,57 @@ nav ul li a {
 
 .project-links a:hover img {
     transform: scale(1.2);
+}
+
+.project-content {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.project-info {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.project-images {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.project-images img {
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .social-links {
