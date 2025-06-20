@@ -14,35 +14,63 @@
         </a>
     </header>
 
-    <main>
-        <section class="project-page">
-            <!-- Main Image -->
-            <img src="img/suregs-mask-img-0.webp" alt="Splash Art" class="project-main-image"/>
+    <main class="project-page">
+        <div class="project-content">
+            <div class="project-info">
+                <p class="project-title">Süreg's Mask</p>
 
-            <!-- Date -->
-            <p class="project-date">March / 6 / 2024</p>
+                <p class="project-date">March / 6 / 2024</p>
 
-            <!-- Description -->
-            <p class="project-description">
-                Süreg's Mask is a project team of the subject “Project II” in CITM University: Videogames Design & Developments degree and Design, Animation and Digital Art degree.
-            </p>
+                <p class="project-description">
+                    Süreg's Mask is a project team of the subject “Project II” in CITM University: Videogames Design & Developments degree and Design, Animation and Digital Art degree.
+                </p>
 
-            <!-- Tags -->
-            <div class="project-tags">
-                <span>OpenGL</span>
-                <span>Box2D</span>
-                <span>SDL2</span>
-                <span>C++</span>
-                <span>XML</span>
+                <div class="project-tags">
+                    <span>OpenGL</span>
+                    <span>Box2D</span>
+                    <span>SDL2</span>
+                    <span>C++</span>
+                    <span>XML</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/SouthWest-Studios/Suregs-Mask" target="_blank">
+                        <img src="img/github.png" alt="Süreg's Mask Github" />
+                    </a>
+                </div>
             </div>
 
-            <!-- Links -->
-            <div class="project-links">
-                <a href="https://github.com/SouthWest-Studios/Suregs-Mask" target="_blank">
-                    <img src="img/github.png" alt="Suregs Mask GitHub" />
-                </a>
+            <div class="project-images" id="image-slider">
+                <img src="img/suregs-mask/suregs-mask-img-1.png" alt="Screenshot 1" />
+                <img src="img/suregs-mask/suregs-mask-img-2.png" alt="Screenshot 2" />
+                <img src="img/suregs-mask/suregs-mask-img-3.png" alt="Screenshot 3" />
+                <img src="img/suregs-mask/suregs-mask-img-4.png" alt="Screenshot 4" />
             </div>
-        </section>
+        </div>
     </main>
+
+    <script>
+        const sliderContainer = document.getElementById("image-slider");
+        const allImages = sliderContainer.querySelectorAll("img");
+
+        const images = Array.from(allImages).filter(img => {
+            const src = img.getAttribute("src");
+            return !src.toLowerCase().endsWith(".gif");
+        });
+
+        let currentImageIndex = 0;
+
+        images.forEach((img, index) => {
+            img.style.display = index === 0 ? "block" : "none";
+        });
+
+        setInterval(() => {
+            images[currentImageIndex].style.display = "none";
+
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            images[currentImageIndex].style.display = "block";
+        }, 3000);
+    </script>
 </body>
 </html>

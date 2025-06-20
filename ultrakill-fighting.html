@@ -14,32 +14,58 @@
         </a>
     </header>
 
-    <main>
-        <section class="project-page">
-            <!-- Main Image -->
-            <img src="img/ultrakill-img-0.png" alt="Screenshot del juego" class="project-main-image"/>
+    <main class="project-page">
+        <div class="project-content">
+            <div class="project-info">
+                <p class="project-title">Ultrakill Fighting</p>
 
-            <!-- Date -->
-            <p class="project-date">November / 30 / 2024</p>
+                <p class="project-date">November / 30 / 2024</p>
 
-            <!-- Description -->
-            <p class="project-description">
-                A 2D fighting game inspired by classics like Street Fighter and Mortal Kombat, set in the fast-paced world of Ultrakill.
-            </p>
+                <p class="project-description">
+                    A 2D fighting game inspired by classics like Street Fighter and Mortal Kombat, set in the fast-paced world of Ultrakill.
+                </p>
 
-            <!-- Tags -->
-            <div class="project-tags">
-                <span>Unity</span>
-                <span>C#</span>
+                <div class="project-tags">
+                    <span>Unity</span>
+                    <span>C#</span>
+                </div>
+
+                <div class="project-links">
+                    <a href="https://github.com/eduardobr33/Ultrakill-Fighting" target="_blank">
+                        <img src="img/github.png" alt="Ultrakill Fighting Github" />
+                    </a>
+                </div>
             </div>
 
-            <!-- Links -->
-            <div class="project-links">
-                <a href="https://github.com/eduardobr33/Ultrakill-Fighting" target="_blank">
-                    <img src="img/github.png" alt="Ultrakill Fighting GitHub" />
-                </a>
+            <div class="project-images" id="image-slider">
+                <img src="img/ultrakill-fighting/ultrakill-img-1.png" alt="Screenshot 1" />
+                <img src="img/ultrakill-fighting/GifGameplay.gif" alt="Gameplay Gif" />
             </div>
-        </section>
+        </div>
     </main>
+
+    <script>
+        const sliderContainer = document.getElementById("image-slider");
+        const allImages = sliderContainer.querySelectorAll("img");
+
+        const images = Array.from(allImages).filter(img => {
+            const src = img.getAttribute("src");
+            return !src.toLowerCase().endsWith(".gif");
+        });
+
+        let currentImageIndex = 0;
+
+        images.forEach((img, index) => {
+            img.style.display = index === 0 ? "block" : "none";
+        });
+
+        setInterval(() => {
+            images[currentImageIndex].style.display = "none";
+
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            images[currentImageIndex].style.display = "block";
+        }, 3000);
+    </script>
 </body>
 </html>

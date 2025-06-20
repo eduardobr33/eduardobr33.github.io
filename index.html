@@ -36,25 +36,17 @@
 
             <!-- W40K-TLM -->
             <div class="project" onclick="location.href='w40k-tlm.html'">
-                <img src="img/w40k-the-last-marine-img-0.png" alt="Warhammer 40k: The Last Marine image" />
+                <img src="img/W40K-TLM/w40k-the-last-marine-img-0.png" alt="Warhammer 40k: The Last Marine Portrait" />
             </div>
 
             <!-- ULTRAKILL-FIGHTING -->
             <div class="project" onclick="location.href='ultrakill-fighting.html'">
-                <img src="img/ultrakill-img-0.png" alt="Ultrakill Fighting image" />
+                <img src="img/ultrakill-fighting/ultrakill-img-0.png" alt="Ultrakill Fighting Portrait" />
             </div>
 
             <!-- SÜREG'S MASK -->
-            <div class="project" onmouseover="startSlider('slider-suregs-mask', true)" onmouseout="stopSlider('slider-suregs-mask', 'img/suregs-mask-img-0.webp')" onclick="location.href='suregs-mask.html'">
-                <img id="slider-suregs-mask" src="img/suregs-mask-img-0.webp" alt="Süreg's Mask image" />
-            </div>
-
-            <div class="project">
-                <h3>Coming Soon...</h3>
-            </div>
-
-            <div class="project">
-                <h3>Coming Soon...</h3>
+            <div class="project" onclick="location.href='suregs-mask.html'">
+                <img src="img/suregs-mask/suregs-mask-img-0.webp" alt="Süreg's Mask Portrait" />
             </div>
 
             <div class="project">
@@ -145,33 +137,6 @@
 
     <!-- SCRIPT -->
     <script>
-        const sliders = {
-            "slider-suregs-mask": {
-                images: ["img/suregs-mask-img-1.png", "img/suregs-mask-img-2.png", "img/suregs-mask-img-3.png", "img/suregs-mask-img-4.png"],
-                index: 0,
-                interval: null
-            }
-        };
-
-        function startSlider(id, isFirstImage) {
-            const slider = sliders[id];
-            if (!slider) return;
-
-            slider.interval = setInterval(() => {
-                slider.index = (slider.index + 1) % slider.images.length;
-                document.getElementById(id).src = slider.images[slider.index];
-            }, 2000);
-        }
-
-        function stopSlider(id, originalSrc) {
-            const slider = sliders[id];
-            if (!slider) return;
-
-            clearInterval(slider.interval);
-            slider.index = 0;
-            document.getElementById(id).src = originalSrc;
-        }
-
         document.querySelectorAll('.project a').forEach(link => {
             link.addEventListener('click', function(event) {
                 event.stopPropagation();

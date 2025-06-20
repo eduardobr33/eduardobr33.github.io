@@ -45,15 +45,25 @@
                     <a href="https://github.com/Burned-Games/Coffee-Engine" target="_blank">
                         <img src="img/coffee-engine.png" alt="Coffee Engine Github" />
                     </a>
+                    <a href="https://burned-games.github.io" target="_blank">
+                        <img src="img/burned-games.png" alt="Burned Games WebPage" />
+                    </a>
                     <a href="https://github.com/Burned-Games/W40K-TLM" target="_blank">
                         <img src="img/github.png" alt="Warhammer 40k: The Last Marine Github" />
                     </a>
                 </div>
             </div>
 
-            <div class="project-images">
-                <img src="img/w40k-the-last-marine-img-0.png" alt="Screenshot 1" />
-                <img src="img/w40k-the-last-marine-img-1.png" alt="Screenshot 2" />
+            <div class="project-images" id="image-slider">
+                <img src="img/W40K-TLM/w40k-the-last-marine-img-1.png" alt="Screenshot 1" />
+                <img src="img/W40K-TLM/w40k-the-last-marine-img-2.jpg" alt="Screenshot 2" />
+                <img src="img/W40K-TLM/w40k-the-last-marine-img-3.png" alt="Screenshot 3" />
+                <img src="img/W40K-TLM/w40k-the-last-marine-img-4.jpg" alt="Screenshot 4" />
+                <img src="img/W40K-TLM/GifRange.gif" alt="Range Behavior Gif" />
+                <img src="img/W40K-TLM/GifSupport.gif" alt="Support Behavior Gif" />
+                <img src="img/W40K-TLM/GifKamikaze.gif" alt="Kamikaze Behavior Gif" />
+                <img src="img/W40K-TLM/GifTank.gif" alt="Tank Behavior Gif" />
+                <img src="img/W40K-TLM/GifBoss.gif" alt="Boss Behavior Gif" />
 
                 <div class="video-wrapper">
                     <iframe src="https://www.youtube.com/embed/pNp_OPTwnTo" 
@@ -65,5 +75,29 @@
             </div>
         </div>
     </main>
+
+    <script>
+        const sliderContainer = document.getElementById("image-slider");
+        const allImages = sliderContainer.querySelectorAll("img");
+
+        const images = Array.from(allImages).filter(img => {
+            const src = img.getAttribute("src");
+            return !src.toLowerCase().endsWith(".gif");
+        });
+
+        let currentImageIndex = 0;
+
+        images.forEach((img, index) => {
+            img.style.display = index === 0 ? "block" : "none";
+        });
+
+        setInterval(() => {
+            images[currentImageIndex].style.display = "none";
+
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            images[currentImageIndex].style.display = "block";
+        }, 3000);
+    </script>
 </body>
 </html>
